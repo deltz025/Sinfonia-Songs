@@ -9,7 +9,7 @@
               let tk = new verovio.toolkit();
               console.log("Verovio loaded.")
 
-              fetch("https://www.verovio.org/editor/brahms.mei")
+              fetch("https://deltz025.github.io/Sinfonia-Songs/MEI/HailSinfonia.mei")
                 .then( (response) => response.text() )
                 .then( (meiXML) => {
                   let svg = tk.renderData(meiXML, {});
@@ -126,13 +126,13 @@ body {
   <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for a song">
 
   <ul id="myUL">
-    <li><a href="#">Hail Sinfonia</a></li>
-    <li><a href="#">A Sinfonian Anthem</a></li>
+    <li><a href="https://deltz025.github.io/Sinfonia-Songs/index.html?file=MEI/HailSinfonia.mei">Hail Sinfonia</a></li>
+    <li><a href="https://deltz025.github.io/Sinfonia-Songs/index.html?file=MEI/SinfoniaAnthem.mei">A Sinfonian Anthem</a></li>
   
     <li><a href="#">Light Your Pipe</a></li>
     <li><a href="#">Founder's Day</a></li>
   
-    <li><a href="#">Rare Old Wine</a></li>
+    <li><a href="https://deltz025.github.io/Sinfonia-Songs/index.html?file=MEI/RareOldWine.mei">Rare Old Wine</a></li>
     <li><a href="#">Vive L'Amour</a></li>
   </ul> 
   <p style="color:white;padding-left:12px;">Lovingly and inexpertly hacked together by DE, 2024</p>
