@@ -28,7 +28,8 @@
 
   <!-- Verovio (necessary)-->
   <script src="https://www.verovio.org/javascript/latest/verovio-toolkit-wasm.js" defer></script>
-    <script>
+    
+  <!-- (COMMENTING OUT TO TEST CDATA FROM VEROVIO) script>
         document.addEventListener("DOMContentLoaded", (event) => {
             verovio.module.onRuntimeInitialized = () => {
               let tk = new verovio.toolkit();
@@ -42,7 +43,34 @@
                 });
             }
         });
-      </script>
+    </script -->
+  <script>
+//<![CDATA[
+    var vrvToolkit = null;
+    var page = 1;
+    var zoom = 40;
+    var pageHeight = 2794;
+    var pagewidth = 2159;
+    var swipe_pages = false;
+    var format = 'mei';
+    var outputFilename = 'output.mei';
+    var ids = [];
+    var pdfFormat = "Letter";
+    var pdfOrientation = "portrait";
+    var savedOptions = undefined;
+    var customOptions = undefined;
+    var target = "";
+    var disabledOptions = ["adjustPageHeight","breaks","landscape","pageHeight","pageWidth","mmOutput","footer"];
+
+    // reload cookies
+    if ( $.cookie('zoom') ) zoom = $.cookie('zoom');
+
+    XXXXX
+
+
+
+  </script>
+
 <style>
 body {
   font-family: "Lato", sans-serif;
@@ -144,6 +172,48 @@ body {
 </style>
 </head>
 <body>
+
+<div id="page-content-wrapper">
+  <!-- top navbar -->
+  <div id="TopNav" class="navbar navbar-default navbar-with-sidebar"> <!-- DOES THIS NEED TO BE DEFINED IN CSS?-->
+    <button type="button" class="navbar-toggle sidebar-toggle" data-toggle="offcanvas" data-target=".sidebar-nav">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+ </button>
+ <div class="btn-group">
+     <button id="pdf-button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#pdfDialog" type="button" data-loading-text="Generating PDF..." style="display: none;">
+         <span class="hidden-xs">PDF </span><span class="glyphicon glyphicon-book"/>
+     </button>
+     <button id="options-button" class="btn btn-sm btn-default hidden-xs" data-toggle="modal" data-target="#optionDialog" type="button" data-loading-text="Style editor..." style="display: none;">
+         <span class="hidden-xs">Options </span><span class="glyphicon glyphicon-wrench"/>
+     </button>
+     <button id="play-button" onclick="play_midi();" class="btn btn-sm btn-default" type="button" style="display: none;">
+         <span class="hidden-xs">Play MIDI </span><span class="glyphicon glyphicon-volume-up"/>
+     </button>
+ </div>
+
+ <a class="navbar-brand logo-nav" href="https://deltz025.github.io/Sinfonia=Songs">
+     <img alt="Sinfonia Songs Logo" src="https://www.verovio.org/images/SinfoniaSongsLogo.png" />
+ </a>
+ <div style="clear: both;"></div>
+ <hr/>
+</div>
+
+<div id="svg_panel" style="background-color: #fff;">
+ <div id="player" style="z-index: 20; position: absolute; display: none;"></div>
+ <div id="svg_output" style="overflow:hidden;" />
+</div>
+</div>  
+
+
+
+  </div>
+
+
+
+
+
 
 <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
