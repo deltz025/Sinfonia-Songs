@@ -1,8 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://www.verovio.org/javascript/latest/verovio-toolkit-wasm.js" defer></script>
+  <title>Sinfonia Songs Web Viewer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- link separate stylesheets here if needed-->
+  
+  <!-- jQuery (copying from Verovio's viewer and importing the scripts)-->
+  <script src="https://www.verovio.org/javascript/jquery.min.js" type="text/javascript"></script>
+  <script src="https://www.verovio.org/javascript/jquery.touchSwipe.min.js" type="text/javascript"></script>
+  <script src="https://www.verovio.org/javascript/bootstrap.min.js" type="text/javascript"></script>
+  <script src="https://www.verovio.org/javascript/bootstrap-contextmenu.js" type="text/javascript"></script>
+  <script src="https://www.verovio.org/javascript/FileSaver.min.js" type="text/javascript"></script>
+  <script src="https://www.verovio.org/javascript/d3.min.js" type="text/javascript"></script>
+  <script src="https://www.verovio.org/javascript/jquery.cookie.js" type="text/javascript"></script>
+  <script src="https://www.verovio.org/javascript/jsonform.js" type="text/javascript"></script> 
+
+  <!-- midi-player -->    
+  <script src="https://www.verovio.org/javascript/midi-player/wildwebmidi.js" type="text/javascript"></script>
+  <script src="https://www.verovio.org/javascript/midi-player/midiplayer.js" type="text/javascript"></script>
+
+  <!-- pdf kit (not sure if this is necessary, honestly) -->
+    
+  <script src="https://www.verovio.org/javascript/pdfkit/blobstream.js" type="text/javascript"></script>
+  <script src="https://www.verovio.org/javascript/pdfkit/pdfkit.js" type="text/javascript"></script>
+  <script src="https://www.verovio.org/javascript/pdfkit/source.js" type="text/javascript"></script>
+  <script src="https://www.verovio.org/javascript/pdfkit/vrv-ttf.js" type="text/javascript"></script>  
+
+  <!-- Verovio (necessary)-->
+  <script src="https://www.verovio.org/javascript/latest/verovio-toolkit-wasm.js" defer></script>
     <script>
         document.addEventListener("DOMContentLoaded", (event) => {
             verovio.module.onRuntimeInitialized = () => {
